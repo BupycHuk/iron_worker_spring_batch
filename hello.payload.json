@@ -1,0 +1,7 @@
+{
+    "jobName": "readMultiFileJob2",
+    "parameters": {
+        "input.file": "csv/inputs/domain-*.csv",
+        "output.file": "csv/outputs/domain.all.csv"
+    }
+}
