@@ -107,7 +107,7 @@ zip -r spring-batch.zip .
 Then upload it:
 
 ```sh
-iron worker upload --name hello-java --zip spring-batch.zip iron/java java -jar build/libs/gs-batch-processing-0.1.0.jar
+iron worker upload --name spring-batch --zip spring-batch.zip iron/java java -jar build/libs/gs-batch-processing-0.1.0.jar
 ```
 
 ### 5. Queue / Schedule jobs for your worker
