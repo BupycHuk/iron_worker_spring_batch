@@ -14,7 +14,7 @@ apply plugin: 'maven-publish'
 
 jar {
     group = 'io.iron'
-    baseName = 'iron_worker_spring_batch'
+    baseName = 'ironworker-springbatch'
     version =  '1.0'
 }
 
