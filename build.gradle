@@ -8,13 +8,14 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+apply plugin: 'maven-publish'
 
 jar {
-    baseName = 'gs-batch-processing'
-    version =  '0.1.0'
+    group = 'io.iron'
+    baseName = 'iron_worker_spring_batch'
+    version =  '1.0'
 }
 
 repositories {
@@ -41,4 +42,11 @@ task copyRuntimeLibs(type: Copy) {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.10'
+}
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
 }
