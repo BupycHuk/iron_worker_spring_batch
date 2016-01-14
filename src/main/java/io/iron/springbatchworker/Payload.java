@@ -5,15 +5,16 @@ import java.util.Map;
 
 public class Payload {
 
-    private String jobName;
+    private String jobPath;
+    private String jobIdentifier;
     private Map <String, String> parameters;
 
-    public String getJobName() {
-        return jobName;
+    public String getJobIdentifier() {
+        return jobIdentifier;
     }
 
-    public void setJobName(String jobName) {
-        this.jobName = jobName;
+    public void setJobIdentifier(String jobIdentifier) {
+        this.jobIdentifier = jobIdentifier;
     }
 
     public Map<String, String> getParameters() {
@@ -22,5 +23,13 @@ public class Payload {
 
     public void setParameters(HashMap<String, String> parameters) {
         this.parameters = parameters;
+    }
+
+    public String getJobPath() {
+        return jobPath;
+    }
+
+    public void setJobPath(String jobPath) {
+        this.jobPath = jobPath;
     }
 }

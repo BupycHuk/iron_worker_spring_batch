@@ -35,7 +35,7 @@ public class SpringWorkerHelper {
         return jobParametersBuilder.toJobParameters();
     }
 
-    private Payload getPayload() throws IOException {
+    Payload getPayload() throws IOException {
         if (payload != null) {
             return payload;
         }
@@ -44,7 +44,7 @@ public class SpringWorkerHelper {
     }
 
     public String getJobName() throws IOException {
-        return getPayload().getJobName();
+        return getPayload().getJobIdentifier();
     }
 
     public JobExecution launchJob(ApplicationContext context) throws IOException, JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException {
