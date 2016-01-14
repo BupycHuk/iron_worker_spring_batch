@@ -33,7 +33,7 @@ dependencies {
 
 task copyRuntimeLibs(type: Copy) {
 
-    into "$buildDir/libs/dependencies"
+    into "$buildDir/libs"
 
     from configurations.testRuntime
 

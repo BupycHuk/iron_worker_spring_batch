@@ -8,7 +8,7 @@ to IronWorker for production.
 ### 1. Build including the dependencies:
 
 ```sh
-./gradlew clean build
+./gradlew clean build copyRuntimeLibs
 ```
 
 ### 2. Test locally
@@ -16,7 +16,7 @@ to IronWorker for production.
 Now run it to test it out:
 
 ```sh
-docker run --rm  -e "PAYLOAD_FILE=hello.payload.json" -e "YOUR_ENV_VAR=ANYTHING" -v "$PWD":/worker -w /worker iron/java java  -jar build/libs/gs-batch-processing-0.1.0.jar
+docker run --rm  -e "PAYLOAD_FILE=hello.payload.json" -e "YOUR_ENV_VAR=ANYTHING" -v "$PWD":/worker -w /worker iron/java java -cp "build/libs/*" io.iron.springbatchworker.IronWorkerJobRunner
 ```
 
 The PAYLOAD_FILE environment variable is passed in to your worker automatically and tells you
