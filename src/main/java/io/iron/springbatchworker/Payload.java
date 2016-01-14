@@ -1,4 +1,4 @@
-package hello;
+package io.iron.springbatchworker;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,5 +1,6 @@
 package hello;
 
+import io.iron.springbatchworker.SpringWorkerHelper;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

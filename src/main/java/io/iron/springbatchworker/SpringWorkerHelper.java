@@ -1,4 +1,4 @@
-package hello;
+package io.iron.springbatchworker;
 
 import io.iron.ironworker.client.helpers.WorkerHelper;
 import org.springframework.batch.core.*;
