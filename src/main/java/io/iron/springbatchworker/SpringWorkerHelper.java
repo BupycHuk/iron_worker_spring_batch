@@ -35,7 +35,7 @@ public class SpringWorkerHelper {
         return jobParametersBuilder.toJobParameters();
     }
 
-    Payload getPayload() throws IOException {
+    public Payload getPayload() throws IOException {
         if (payload != null) {
             return payload;
         }

@@ -10,7 +10,6 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
-apply plugin: 'maven-publish'
 
 jar {
     group = 'io.iron'
@@ -42,11 +41,4 @@ task copyRuntimeLibs(type: Copy) {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.10'
-}
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
 }
