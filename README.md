@@ -2,6 +2,8 @@
 
 This library makes opportunity to use spring batch applications in iron worker
 
+This library uses payload to get path to Job configuration file to read job identifier and job parameters.
+
 **Note**: Be sure you've followed the base [getting started instructions on the top level README](https://github.com/iron-io/dockerworker).
 
 Read more about [Spring batch](http://docs.spring.io/spring-batch/trunk/reference/html/index.html)
