@@ -1,0 +1,7 @@
+{
+    "jobPath": "spring/batch/jobs/job-find-github-repositories.xml",
+    "jobIdentifier": "findGithubRepositoriesJob",
+    "parameters": {
+        "input.query": "test example"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "jobPath": "spring/batch/jobs/job-read-files.xml",
+    "jobIdentifier": "readMultiFileWriteIronMQJob",
+    "parameters": {
+        "aws.accessKey": "[ACCESS_KEY]",
+        "aws.secretKey": "[SECRET_KEY]",
+        "aws.bucketName": "[BUCKET_NAME]",
+        "aws.regionName": "us-east-1",
+        "ironmq.queue.name": "test-queue"
+    }
+}

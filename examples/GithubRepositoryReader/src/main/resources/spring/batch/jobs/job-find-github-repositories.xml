@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:batch="http://www.springframework.org/schema/batch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/batch 
+		http://www.springframework.org/schema/batch/spring-batch-2.2.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		">
+
+    <import resource="../config/context.xml"/>
+
+	<job id="findGithubRepositoriesJob" xmlns="http://www.springframework.org/schema/batch">
+
+		<step id="step1">
+			<tasklet>
+				<chunk reader="githubRepositoriesReader" writer="consoleWriter" commit-interval="5" />
+			</tasklet>
+		</step>
+
+	</job>
+
+	<bean id="githubRepositoriesReader" scope="step"
+		class="io.iron.springbatch.example.GithubRepositoriesReader">
+		<property name="query" value="#{jobParameters['input.query']}" />
+		<property name="name" value="githubRepositoriesReader" />
+	</bean>
+
+	<bean id="consoleWriter" class="io.iron.springbatch.example.ConsoleWriter" />
+
+</beans>

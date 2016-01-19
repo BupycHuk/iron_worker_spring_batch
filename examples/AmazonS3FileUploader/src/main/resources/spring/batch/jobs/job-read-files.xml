@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:batch="http://www.springframework.org/schema/batch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/batch 
+		http://www.springframework.org/schema/batch/spring-batch-2.2.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		">
+
+    <import resource="../config/context.xml"/>
+
+	<job id="readMultiFileWriteIronMQJob" xmlns="http://www.springframework.org/schema/batch">
+
+		<step id="step1">
+			<tasklet>
+				<chunk reader="ironmqReader" writer="amazonS3Writer" commit-interval="5" />
+			</tasklet>
+		</step>
+
+	</job>
+
+	<bean id="amazonS3Writer" scope="step"
+		class="io.iron.springbatch.example.AmazonS3Writer">
+		<property name="name" value="amazonS3Writer" />
+		<property name="accessKey" value="#{jobParameters['aws.accessKey']}"/>
+		<property name="secretKey" value="#{jobParameters['aws.secretKey']}"/>
+		<property name="bucketName" value="#{jobParameters['aws.bucketName']}"/>
+		<property name="regionName" value="#{jobParameters['aws.regionName']}"/>
+
+	</bean>
+
+	<bean id="ironmqReader" class="io.iron.springbatch.example.IronMQReader" scope="step" >
+		<property name="queue" value="#{jobParameters['ironmq.queue.name']}" />
+		<property name="name" value="ironmqReader" />
+	</bean>
+
+</beans>

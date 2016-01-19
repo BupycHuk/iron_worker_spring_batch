@@ -1,0 +1,8 @@
+{
+    "jobPath": "spring/batch/jobs/job-read-files.xml",
+    "jobIdentifier": "readMultiFileWriteIronMQJob",
+    "parameters": {
+        "input.file": "csv/inputs/*.csv",
+        "ironmq.queue.name": "test-queue"
+    }
+}
