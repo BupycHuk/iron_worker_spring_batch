@@ -65,4 +65,4 @@ Gradle uses whatever JDK it finds in your path. Alternatively, you can set the J
 ./gradlew clean build
 ```
 
-### 3-7 follow the base [getting started instructions on the top level README](https://github.com/bupychuk/https://github.com/BupycHuk/iron_worker_spring_batch).
+### 3-7 follow the base [getting started instructions on the top level README](https://github.com/BupycHuk/iron_worker_spring_batch).
