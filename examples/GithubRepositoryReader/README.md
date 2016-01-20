@@ -50,4 +50,6 @@ Gradle uses whatever JDK it finds in your path. Alternatively, you can set the J
 ./gradlew clean build
 ```
 
+This script will build and put jar file to build/libs/gs-batch-processing-0.1.0.jar
+
 ### 3-7 follow the base [getting started instructions on the top level README](https://github.com/BupycHuk/iron_worker_spring_batch).
