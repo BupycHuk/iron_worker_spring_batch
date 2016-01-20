@@ -7,25 +7,28 @@ to IronWorker for production.
 
 Read more about [Spring batch](http://docs.spring.io/spring-batch/trunk/reference/html/index.html)
 
-This example reads data from csv files and pushes them to IronMQ using spring batch and iron worker
+This example pulls urls from IronMQ and uploads files to AmazonS3 storage using spring batch and iron worker
 
 App uses payload to get path to Job configuration file to read job identifier and job parameters.
 
-In this example app uses `src/main/resources/spring/batch/jobs/job-read-files.xml` configuration file 
-and runs job with id "readMultiFileWriteIronMQJob" and two [parameters](http://docs.spring.io/spring-batch/trunk/reference/html/configureStep.html#late-binding):                                                                                                   
-
-`input.file`: path to CSV files                                                                                                                                 
-
-`ironmq.queue.name`: iron mq queue name
+In this example app uses `src/main/resources/spring/batch/jobs/job-upload-to-amazons3.xml` configuration file 
+and runs job with id "amazonS3UploadJob" and five [parameters](http://docs.spring.io/spring-batch/trunk/reference/html/configureStep.html#late-binding):                                                                                                   
 
 
-readMultiFileWriteIronMQJob consists of one step with id "step1". 
+`aws.accessKey`: AWS API access key
+`aws.secretKey`: AWS API secret key
+`aws.bucketName`: AWS S3 storage bucket name,
+`aws.regionName`: AWS region name,
+`ironmq.queue.name`: IronMQ queue name
 
-Step1 uses flatFileItemReader as reader and ironmqWriter as writer. 
 
-FlatFileItemReader reads data from csv files (specified by input.file parameter in payload). 
+amazonS3UploadJob consists of one step with id "step1". 
 
-IronmqWriter writes data to IronMQ (queue name is specified by ironmq.queue.name parameter in payload)
+Step1 uses ironmqReader as reader and amazonS3Writer as writer. 
+
+ironmqReader pull urls from IronMQ (queue name is specified by ironmq.queue.name parameter in payload).
+
+amazonS3Writer load data from urls and upload data to Amazon S3 storage (bucket name is specified by aws.bucketName parameter in payload)
 
 
 Read spring batch docs to configure [job](http://docs.spring.io/spring-batch/trunk/reference/html/configureJob.html) 
@@ -39,10 +42,13 @@ Edit payload file
 Payload file has next structure:
 ```json
 {
-    "jobPath": "spring/batch/jobs/job-read-files.xml",
-    "jobIdentifier": "readMultiFileWriteIronMQJob",
+    "jobPath": "spring/batch/jobs/job-upload-to-amazons3.xml",
+    "jobIdentifier": "amazonS3UploadJob",
     "parameters": {
-        "input.file": "[PATH TO CSV FILES]",
+        "aws.accessKey": "[ACCESS KEY]",
+        "aws.secretKey": "[SECRET KEY]",
+        "aws.bucketName": "[BUCKET NAME]",
+        "aws.regionName": "[REGION NAME]",
         "ironmq.queue.name": "[IRON MQ QUEUE NAME]"
     }
 }

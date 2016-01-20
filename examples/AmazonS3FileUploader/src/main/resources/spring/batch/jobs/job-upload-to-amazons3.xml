@@ -9,7 +9,7 @@
 
     <import resource="../config/context.xml"/>
 
-	<job id="readMultiFileWriteIronMQJob" xmlns="http://www.springframework.org/schema/batch">
+	<job id="amazonS3UploadJob" xmlns="http://www.springframework.org/schema/batch">
 
 		<step id="step1">
 			<tasklet>

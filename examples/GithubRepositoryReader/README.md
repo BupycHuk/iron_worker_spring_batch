@@ -3,7 +3,7 @@
 This example will show you how to build your Spring batch worker, test it locally, then upload it
 to IronWorker for production.
 
-This example finds github repositories by query and write to console using spring batch and iron worker
+This example finds github repositories by query and writes to console using spring batch and iron worker
 
 App uses payload to get path to Job configuration file to read job identifier and job parameters.
 

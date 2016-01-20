@@ -1,6 +1,6 @@
 {
-    "jobPath": "spring/batch/jobs/job-read-files.xml",
-    "jobIdentifier": "readMultiFileWriteIronMQJob",
+    "jobPath": "spring/batch/jobs/job-upload-to-amazons3.xml",
+    "jobIdentifier": "amazonS3UploadJob",
     "parameters": {
         "aws.accessKey": "[ACCESS_KEY]",
         "aws.secretKey": "[SECRET_KEY]",

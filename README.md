@@ -8,7 +8,7 @@ This library uses payload to get path to Job configuration file to read job iden
 
 Read more about [Spring batch](http://docs.spring.io/spring-batch/trunk/reference/html/index.html)
 
-You can see examples [here](https://github.com/BupycHuk/iron_worker_spring_batch_example)
+You can see examples [here](https://github.com/BupycHuk/iron_worker_spring_batch/tree/master/examples)
 
 ## Get started
 
