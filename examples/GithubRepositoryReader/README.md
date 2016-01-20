@@ -1,4 +1,4 @@
-## Quick Example for a Spring Batch Worker (3 minutes)
+# Github repositories finder example for a Spring Batch Worker (3 minutes)
 
 This example will show you how to build your Spring batch worker, test it locally, then upload it
 to IronWorker for production.
@@ -22,6 +22,9 @@ ConsoleWriter writes results to console
 
 Read spring batch docs to configure [job](http://docs.spring.io/spring-batch/trunk/reference/html/configureJob.html) 
 and [steps](http://docs.spring.io/spring-batch/trunk/reference/html/configureStep.html)
+
+## Getting started
+
 ### 1. prepare local files
 
 Put iron.json to example root dir

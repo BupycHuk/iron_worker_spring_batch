@@ -10,7 +10,7 @@ Read more about [Spring batch](http://docs.spring.io/spring-batch/trunk/referenc
 
 You can see examples [here](https://github.com/BupycHuk/iron_worker_spring_batch/tree/master/examples)
 
-## Get started
+## Getting started
 
 ### 1. prepare local files
 

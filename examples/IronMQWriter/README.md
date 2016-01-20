@@ -1,4 +1,4 @@
-## Quick Example for a Spring Batch Worker (3 minutes)
+# Iron MQ Writer example for a Spring Batch Worker
 
 This example will show you how to build your Spring batch worker, test it locally, then upload it
 to IronWorker for production.
@@ -30,6 +30,8 @@ IronmqWriter writes data to IronMQ (queue name is specified by ironmq.queue.name
 
 Read spring batch docs to configure [job](http://docs.spring.io/spring-batch/trunk/reference/html/configureJob.html) 
 and [steps](http://docs.spring.io/spring-batch/trunk/reference/html/configureStep.html)
+
+## Getting started
 
 ### 1. prepare local files
 
